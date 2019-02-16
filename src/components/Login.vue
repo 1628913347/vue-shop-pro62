@@ -2,7 +2,7 @@
   <div id="login-container">
     <div id="login-box">
       <div id="logo-box">
-        <img src="../assets/img/logo.png" alt>
+        <img src="../assets/img/02.jpg" alt>
       </div>
 
       <el-form :rules="loginFormRules" ref="loginFormRef" :model="loginForm">
@@ -33,8 +33,8 @@ export default {
     return {
       // 登录form表单需要的数据对象
       loginForm: {
-        username: '',
-        password: ''
+        username: 'admin',
+        password: '123456'
       },
       // 给 各个表单域 定义校验规则
       loginFormRules: {

@@ -12,6 +12,18 @@ import ElementUI from 'element-ui'
 import axios from 'axios'
 // axios请求根地址
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
+// axios 的请求拦截器
+axios.interceptors.request.use(
+  function(config) {
+    //config 代表 axios 的子级配置对象
+    var token = window.sessionStorage.getItem('token')
+    config.headers.Authorization = token
+    return config
+  },
+  function(error) {
+    return Promise.reject(error)
+  }
+)
 // 给axios配置给Vue的$http成员
 Vue.prototype.$http = axios
 
